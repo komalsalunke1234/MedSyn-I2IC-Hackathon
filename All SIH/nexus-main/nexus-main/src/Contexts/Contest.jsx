@@ -4,47 +4,56 @@ import { useContext } from "react";
 const clinicContext = createContext();
 const clinicsData = [
     {
-        centername: "Skin & surgery International & Asia Institute of Hair Transplant",
+        centername: "Bliss Mother & Baby International Hospital India ",
         centeradd:"207, Tradenet Building, Next to Phoenix Mall, Landmark : Above Kothari Wheels Maruti Showroom, Next to Phoenix Market City, Pune",
         time:"8 pm",
         id:10,
         timings: ["Mon-Sun", "09:30 AM - 10:30 PM"],        
-        specs:"Multi-Speciality Clinic",
+        specs:"Maternity and Baby care Clinic",
         logo: "clinic10",
-        services: ["Dermabrasion",
-            "Laser Resurfacing",
-            "Acne / Pimples Treatment",
-            "Scar Treatment",
-            "Wart Removal",
-            "Laser Hair Removal - Face",
-            "Photofacial",
-            "Tattoo Removal",
-            "Sun Spots, Age Spots, And Other Pigmented Lesions",
-            "Leucoderma Treatment",
-            "Peel, Polishing, Lasers",
-            "Anti Aging Treatment",
-            "Dental Fillings",
-            "Mole Removal",
-            "Dermaroller"],
+        services: [
+            "Prenatal Checkups",
+            "High-Risk Pregnancy Care",
+            "Ultrasound Scanning (2D/3D/4D)",
+            "Fetal Monitoring",
+            "Labor and Delivery Services",
+            "Painless Normal Delivery (Epidural)",
+            "Cesarean Section (C-Section)",
+            "Postnatal Care",
+            "Lactation Consultation",
+            "Neonatal Intensive Care Unit (NICU)",
+            "Newborn Screening",
+            "Vaccination & Immunization",
+            "Growth & Development Tracking",
+            "Infant Nutrition Counseling",
+            "Pediatric Checkups",
+            "Maternal Nutrition & Diet Counseling",
+            "Family Planning & Contraception Counseling",
+            "Pelvic Floor Rehabilitation",
+            "Antenatal Classes (Yoga, Lamaze, Parenting)",
+            "Cord Blood Banking"
+        ],
+        
         docs: {
             12345:{
             docname: "Dr. Pradeep Kumari",
-            docskills: ["MBBS", "Dermatologist", "Veneorology & Leprosy", "Dermatosurgeon", "DVD"],
+            docskills: ["MBBS", "gynacologist", "baby care  & Maternity", "Surgen", "maternity"],
             exp: 21,
             isVerify: true
         },
-        98765:{
+        98765: {
             docname: "Dr. Nitin Jain",
-            docskills:["MBBS", "FCPS", "Hair Transplant Surgeon"],
+            docskills: ["MBBS", "MD - Obstetrics & Gynaecology", "Fellowship in Reproductive Medicine"],
             exp: 21,
             isVerify: true
-
-        }, 45689:{
+        },
+        45689: {
             docname: "Dr. Ajay More",
-            docskills:["MBBS", "MD-Dermatology", "Veneorology & Leprosy"],
+            docskills: ["MBBS", "DNB - Pediatrics", "Neonatal Intensive Care Specialist"],
             exp: 9,
             isVerify: false
         }
+        
     }
     },
     {

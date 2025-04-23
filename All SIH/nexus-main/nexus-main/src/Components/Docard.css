@@ -1,5 +1,5 @@
 .doc_card{
-    background-color: #d5ed9f;
+    background-color: #8594d7;
     border-radius: 10px;
     display: flex;
     flex-direction: row;
@@ -13,9 +13,11 @@
     margin-left: 3%;
     /* margin-top: 3%; */
     width: 12%;
+    border-radius: 10px;
 }
 #docexp{
     margin-top: 1%;
+    color: red;
 }
 #docdetails{
     margin-top: 3%;
@@ -26,25 +28,27 @@
     font-weight: bold;
     /* margin-bottom: 2%; */
     text-decoration: none;
-    color: rgb(0, 127, 0);
+    color: rgb(4, 4, 4);
 }
 .docskills{
     margin-top: 2%;
+    font-size: 14px;
 }
 #verify{
     padding-left: 10px;
-    font-size: small;
+    font-size: 10px;
     /* margin-bottom: 3%; */
 }
 #bookbtn{
     text-decoration: none;
-    background-color: green;
+    background-color: rgb(7, 136, 7);
     width: fit-content;
     border-radius: 5px;
     padding: 6px 5px;
     margin-top: 3%;
     margin-bottom: 3%;
 }
+
 #btns{
     text-decoration: none;
     color: white;

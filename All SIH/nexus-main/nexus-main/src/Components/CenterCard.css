@@ -9,7 +9,7 @@
 .contain{
     margin-top: 5%;
     margin-left: 5%;
-    background-color: #d5ed9f;
+    background-color: #9f9fed;
     height: 30vh;
     width: 50vw;
     display: flex;
@@ -35,7 +35,7 @@
 }
 #type{
     
-    background-color: #00712d;
+    background-color: #ce5ec3;
     width: fit-content;
     padding: 5px;
     color: white;
@@ -43,7 +43,7 @@
     border-radius: 5px;
 }
 #time{
-    background-color: #00712d;
+    background-color: #ce5ec3;
     width: fit-content;
     padding: 5px;
     margin-left:1%;
@@ -64,7 +64,7 @@
     
 }
 #inperson{
-    background-color: #B79FED;
+    background-color: #07890c;
     border: none;
     color: black;
     padding: 6px;

@@ -15,7 +15,7 @@
     margin-top: 5rem;
     margin-left: 2rem;
     margin-bottom: 3%;
-    background-color: #d5ed9f;
+    background-color: #9f9fed;
     height: 38vh;
     width: 70vw;
     display: flex;
@@ -53,7 +53,7 @@
 }
 #clinictype{
     
-    background-color: #00712d;
+    background-color: #a31ca3;
     width: fit-content;
     padding: 5px;
     font-size: medium;
@@ -62,7 +62,7 @@
     border-radius: 5px;
 }
 #clinictime{
-    background-color: #00712d;
+    background-color: #a31ca3;
     width: fit-content;
     padding: 5px;
     margin-left: 1rem;
@@ -72,7 +72,7 @@
     border-radius: 5px;
 }
 #clinicadd{
-    font-size: large;
+    font-size: 14px;
     color: black;
 }
 .clinictags{

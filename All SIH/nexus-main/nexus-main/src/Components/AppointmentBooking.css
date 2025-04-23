@@ -5,7 +5,7 @@
     justify-content: center;
     margin-top: 3%;
     margin-bottom: 3%;
-    background-color:#00712d;
+    background-color:#9d4858;
     width: 60vw;
     border-radius: 15px;
 }
@@ -14,20 +14,20 @@
     padding: 3%;
 }
 .doctags{
-    background-color: #d5ed9f;
+    background-color: #0fc7e3;
     width: fit-content;
     padding: 3px;
     font-weight: bold;
 }
 #datebtn{
-    background-color: #d5ed9f;
+    background-color: #1270db;
     margin-right: 2%;
     margin-top: 2%;
     border-radius: 5px;
     font-weight: 500;
 }
 #timebtn{
-    background-color: #d5ed9f;
+    background-color: #9f9fed;
     margin-right: 2%;
     margin-top: 2%;
     border-radius: 10px;
@@ -48,7 +48,7 @@
 }
 
 .heads{
-    color: orange;
+    color: rgb(245, 244, 241);
     font-weight: 600;
     margin-top: 2%;
     margin-bottom: 1%;
@@ -71,14 +71,17 @@
     border-radius: 5px;
     font-weight: 500;
     margin-bottom: 10%;
+    color: #090909;
+    background-color: rgb(25, 127, 13);
+
 }
 #datebtn:hover  {
-    background-color: #8cc700;
+    background-color: #100b8d;
 }
 #timebtn:hover{
-    background-color: #8cc700;
+    background-color: #9c47d9;
 }
 .bookbtn:hover{
-    background-color: black;
-    color: white;
+    background-color: rgb(20, 199, 29);
+    color: rgb(4, 0, 0);
 }
