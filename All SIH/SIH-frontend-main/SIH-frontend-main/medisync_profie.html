@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Profile</title>
+    <link rel="stylesheet" href="medisync_profile.css"> <!-- Link to CSS stylesheet -->
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="nexus croped.png" alt="MedExpress Logo">
+            </div>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="combine.html">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Section -->
+    <div class="container main-container">
+        <!-- Aside Section -->
+        <aside class="profile-aside">
+            <img src="person.jpg" alt="Patient Photo" class="patient-photo">
+            <h3>Name: <span id="patient-name"></span></h3>
+            <p>Aadhaar: <span id="patient-aadhaar"></span></p>
+            <p>Age: <span id="patient-age"></span></p>
+            <p>Height: <span id="patient-height"></span></p>
+            <p>Weight: <span id="patient-weight"></span></p>
+            <p>Blood Group: <span id="patient-blood-group"></span></p>
+            <p>Gender: <span id="patient-gender"></span></p>
+            <br><br>
+            <div class="button-container">
+                <button type="submit" class="submit">Medication History</button>
+            </div>
+        </aside>
+
+        <!-- Main Content Section -->
+        <main class="profile-content">
+            <!-- Family History Section -->
+            <section class="family-history">
+                <h2>Family History</h2>
+                <form id="family-history-form">
+                    <div class="form-group">
+                        <label>Hypertension:</label>
+                        <input type="radio" name="hypertension" value="yes"> Yes
+                        <input type="radio" name="hypertension" value="no"> No
+                    </div>
+                    <div class="form-group">
+                        <label>Heart Disease:</label>
+                        <input type="radio" name="heart_disease" value="yes"> Yes
+                        <input type="radio" name="heart_disease" value="no"> No
+                    </div>
+                    <div class="form-group">
+                        <label>Diabetes:</label>
+                        <input type="radio" name="diabetes" value="yes"> Yes
+                        <input type="radio" name="diabetes" value="no"> No
+                    </div>
+                    <div class="form-group">
+                        <label>Tuberculosis:</label>
+                        <input type="radio" name="tuberculosis" value="yes"> Yes
+                        <input type="radio" name="tuberculosis" value="no"> No
+                    </div>
+                    <div class="form-group">
+                        <label>Asthma:</label>
+                        <input type="radio" name="asthma" value="yes"> Yes
+                        <input type="radio" name="asthma" value="no"> No
+                    </div>
+                    <div class="form-group">
+                        <label>Cancer:</label>
+                        <input type="radio" name="cancer" value="yes"> Yes
+                        <input type="radio" name="cancer" value="no"> No
+                    </div>
+                    <div class="form-group">
+                        <label>Any other chronic disease:</label>
+                        <input type="text" name="other_disease" placeholder="Specify if any...">
+                    </div>
+                </form>
+            </section>
+    
+            <!-- Personal History Section -->
+            <section class="personal-history">
+                <h2>Personal History</h2>
+                <form id="personal-history-form">
+                    <div class="form-group">
+                        <label>Smoking:</label>
+                        <input type="radio" name="smoking" value="yes" onclick="showSince('smoking_since')"> Yes
+                        <input type="radio" name="smoking" value="no" onclick="hideSince('smoking_since')"> No
+                        <input type="text" id="smoking_since" name="smoking_since" placeholder="Since when? Frequency?" style="display:none;">
+                    </div>
+                    <div class="form-group">
+                        <label>Alcohol:</label>
+                        <input type="radio" name="alcohol" value="yes" onclick="showSince('alcohol_since')"> Yes
+                        <input type="radio" name="alcohol" value="no" onclick="hideSince('alcohol_since')"> No
+                        <input type="text" id="alcohol_since" name="alcohol_since" placeholder="Since when? Frequency?" style="display:none;">
+                    </div>
+                    <div class="form-group">
+                        <label>Drugs:</label>
+                        <input type="radio" name="drugs" value="yes" onclick="showSince('drugs_since')"> Yes
+                        <input type="radio" name="drugs" value="no" onclick="hideSince('drugs_since')"> No
+                        <input type="text" id="drugs_since" name="drugs_since" placeholder="Since when? Frequency?" style="display:none;">
+                    </div>
+                    <div class="form-group">
+                        <label>Tobacco:</label>
+                        <input type="radio" name="tobacco" value="yes" onclick="showSince('tobacco_since')"> Yes
+                        <input type="radio" name="tobacco" value="no" onclick="hideSince('tobacco_since')"> No
+                        <input type="text" id="tobacco_since" name="tobacco_since" placeholder="Since when? Frequency?" style="display:none;">
+                    </div>
+                    <div class="form-group">
+                        <label>Diet:</label>
+                        <input type="radio" name="diet" value="veg"> Vegetarian
+                        <input type="radio" name="diet" value="non-veg"> Non-Vegetarian
+                    </div>
+                </form>
+            </section>
+        </main>
+
+    <!-- Buttons Section -->
+    <div class="button-container">
+        <button type="submit" class="submit-btn">Submit</button>
+        <button type="button" id="edit-btn" class="edit-btn" style="display:none;">Edit Information</button>
+        <button type="button" id="download-btn" class="download-btn" style="display:none;">Download Summary</button>
+        <button type="button" id="print-btn" class="print-btn" style="display:none;">Print Summary</button>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 NEXUS. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js";
+        import { getDatabase, ref, get, push } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-database.js";
+
+        const firebaseConfig = {
+  apiKey: "AIzaSyDAHvy3d4clqBm2BNjHVZz6A0_Ru2dsaIY",
+  authDomain: "loginform-963dd.firebaseapp.com",
+  databaseURL: "https://loginform-963dd-default-rtdb.firebaseio.com",
+  projectId: "loginform-963dd",
+  storageBucket: "loginform-963dd.appspot.com",
+  messagingSenderId: "997158468083",
+  appId: "1:997158468083:web:4dbc892baaf66003ba7a86"
+};
+
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+
+        
+        const userId = '946327336808';
+        const userRef = ref(database, 'users/' + userId);
+
+        get(userRef).then((snapshot) => {
+            if (snapshot.exists()) {
+                const userData = snapshot.val();
+                document.getElementById('patient-name').textContent = userData.username || 'N/A';
+                document.getElementById('patient-aadhaar').textContent = userData.addharno || 'N/A';
+                document.getElementById('patient-age').textContent = userData.age || 'N/A';
+                document.getElementById('patient-height').textContent = userData.age || 'N/A' ;
+                document.getElementById('patient-weight').textContent = userData.weight || 'N/A';
+                document.getElementById('patient-blood-group').textContent = userData.bloodgroup || 'N/A';
+                document.getElementById('patient-gender').textContent = userData.gender || 'N/A';
+            } else {
+                console.log("No data available");
+            }
+        }).catch((error) => {
+            console.error(error);
+        });
+
+        // Form submission for Family History
+        document.getElementById('family-history-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+            push(ref(database, 'family-history'), data)
+                .then(() => alert('Family history data saved!'))
+                .catch(error => console.error('Error saving data: ', error));
+        });
+
+        // Form submission for Personal History
+        document.getElementById('personal-history-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+            push(ref(database, 'personal-history'), data)
+                .then(() => alert('Personal history data saved!'))
+                .catch(error => console.error('Error saving data: ', error));
+        });
+
+        document.querySelector('.submit-btn').addEventListener('click', function(event) {
+            
+            const hypertension = document.querySelector('input[name="hypertension"]:checked').value;
+            const heartDisease = document.querySelector('input[name="heart_disease"]:checked').value;
+            const smoking = document.querySelector('input[name="smoking"]:checked').value;
+
+            const healthData = {
+                hypertension: hypertension,
+                heartDisease: heartDisease,
+                smoking: smoking
+            };
+
+            push(ref(database, 'health-data'), healthData)
+                .then(() => {
+                    alert('Health data saved successfully!');
+                })
+                .catch((error) => {
+                    console.error('Error saving health data: ', error);
+                });
+
+            // Display other buttons
+            document.getElementById('edit-btn').style.display = 'inline-block';
+            document.getElementById('download-btn').style.display = 'inline-block';
+            document.getElementById('print-btn').style.display = 'inline-block';
+        });
+
+        function showSince(fieldId) {
+            document.getElementById(fieldId).style.display = 'block';
+        }
+
+        function hideSince(fieldId) {
+            document.getElementById(fieldId).style.display = 'none';
+        }
+    </script>
+</body>
+</html>

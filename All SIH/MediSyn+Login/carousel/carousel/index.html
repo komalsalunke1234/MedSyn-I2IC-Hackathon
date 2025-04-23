@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="../assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.122.0">
+    <title>Carousel Template · Bootstrap v5.3</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="your-script-file.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="baymax.css">
+<link rel="stylesheet" href="nexus.css">
+
+    <style>
+     
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="carousel.css" rel="stylesheet">
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+      </symbol>
+    </svg>
+
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+              id="bd-theme"
+              type="button"
+              aria-expanded="false"
+              data-bs-toggle="dropdown"
+              aria-label="Toggle theme (auto)">
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+            Light
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li> 
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+            Dark
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#circle-half"></use></svg>
+            Auto
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <nav id="navbar" class="">
+      <div class="nav-wrapper">
+        <!-- Navbar Logo -->
+        <div class="logo">
+          <!-- Logo Placeholder for Inlustration -->
+          <a href="#home" class="medai-link">
+              <!-- <i class="fa-solid fa-hand-holding-medical fa-fade" style="color: #0fd748;"></i> -->
+              <i class="fa-duotone fa-solid fa-hand-holding-medical fa-fade" style="--fa-primary-color: #0fe63a; --fa-secondary-color: #0fe63a;"></i>
+              <span class="medai-text">Medisyn</span>
+          </a>
+          
+        </div>
+<!-- Navbar Links -->
+<ul id="menu">
+  <li><a href="#hero">Home</a></li>
+  <li><a href="#hero1">Services</a></li>
+  <li><a href="#home">About</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="../Login/index1.html">Login</a></li>
+</ul>
+
+        
+      </div>
+      
+    </nav>
+    
+    <section id="hero">
+      <h1>Welcome to Medisyn</h1>
+      <p>Digital solutions for enhancing healthcare services</p>
+    <!--   <a href="#signup" class="button">Get Started Today</a> -->
+  </section>
+  
+    <!-- Menu Icon -->
+    <div class="menuIcon">
+      <span class="icon icon-bars"></span>
+      <span class="icon icon-bars overlay"></span>
+    </div>
+    
+    
+    <div class="overlay-menu">
+      <ul id="menu">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#card-container">Services</a></li>
+          <li><a href="#home">About</a></li>
+          <li><a href="#z">Contact</a></li>
+        </ul>
+        <div class="nav-button">
+          <button class="btn white-btn" id="loginsBtn" onclick="login()">Sign In</button>
+          <button class="btn" id="registersBtn">Sign Up</button>
+      </div>
+    </div>
+
+
+
+
+<main>
+
+  <div id="myCarousel" class="carousel slide mb-6"  data-bs-ride="carousel">
+    <div class="carousel-indicators" >
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="Medisyn.png" alt="Description of image" width="100%" height="100%" class="bd-placeholder-img">
+        <!-- <img src="medisyn3.jpg" alt="Description of image" width="100%" height="100%" class="bd-placeholder-img"> -->
+
+        
+      </div>
+      <div class="carousel-item">
+        <img src="medisyn3.jpg" alt="Description of image" width="100%" height="100%" class="bd-placeholder-img">
+
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <h1 style="padding-top: 50px;">Medisyn</h1>
+            <p style="width:300px;">
+              At <strong>Medisyn</strong>, we blend cutting-edge technology with compassionate care to support you through every step of your pregnancy journey. Our intelligent symptom tracker is designed especially for new and expecting mothers—helping you log and interpret vital signs, emotional changes, and baby’s development with confidence.
+            
+              From personalized insights and evidence-based guidance to timely alerts 
+            </p>
+            
+            
+          </div>
+        </div>
+      </div>
+    
+      </div> 
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+<!----start secrion stay----->
+<section class="stay">
+  <div class="container flex"> 
+      <div class="text" data-aos="fade-up" data-aos-duration="1000">
+          <header>Empowering You, <span>Empowering Health.</span></header>
+          <p>
+            <strong>MediSyn</strong> is a cutting-edge platform designed to revolutionize maternal healthcare by seamlessly integrating centralized pregnancy tracking, AI-driven insights, and secure digital services. It empowers new and expecting mothers with personalized symptom monitoring, educational guidance, and timely alerts—ensuring a safe, informed, and stress-free pregnancy journey from conception through the postpartum period.
+          </p>
+          
+      </div>
+      <div class="img" data-aos="fade-down" data-aos-duration="2000">
+          <img src="https://i.postimg.cc/ryggSG08/bg.png">
+      </div> 
+  </div>
+</section>
+<!----end secrion stay ------>
+
+<!-- ----------------------- -->
+<section class="stay-home">
+  <div class="container flex"> 
+  <div class="img" data-aos="fade-up" data-aos-duration="1000">
+      <img src="https://i.postimg.cc/RF7prjZf/doctor-woman-400px.png">
+      <header>How does MediSyn 
+          <span>Make things better?</span></header>
+      
+  </div>
+  <div class="list" data-aos="fade-left" data-aos-duration="1000">
+      <span>01</span>
+      <p>
+        Advanced Support: <strong>Aarohi</strong> is our intelligent pregnancy care chatbot,<br> trained to understand over 130 maternal and neonatal symptoms to accurately detect<br> early signs of more than 40 pregnancy-related conditions.
+      </p>
+      
+      <span>02</span>
+      <p>
+        Comprehensive Analysis: With a vast maternal health symptom database,<br> <strong>Aarohi</strong> can identify subtle patterns and correlations<br> that may be overlooked in traditional pregnancy assessments—<br>ensuring early detection and proactive care for both mother and baby.
+      </p>
+      
+      <span>03</span>
+      <p>
+        Empowering Decisions: <strong>Aarohi</strong> provides expecting mothers and healthcare professionals with reliable insights and early warning signs—<br>empowering them to make informed decisions for timely intervention and personalized care during pregnancy and postpartum recovery.
+      </p>
+      <span>04</span>
+      <p>
+        Complementing Healthcare: <strong>Aarohi</strong> transforms the pregnancy journey into a stress-free, supportive experience.<br>From daily symptom tracking to emotional well-being check-ins, it bridges the gap between home care and clinical expertise—<br>perfectly complementing traditional healthcare systems with AI-driven, compassionate guidance.
+      </p>
+      
+  </div>
+  </div>  
+</section>
+<!----end secrion stay-home----->
+
+<!------secrion card-corona---->
+<section class="card-corona">
+  <div class="container flex"> 
+      <header data-aos="fade-up" data-aos-duration="1000">How things change with </header>
+      <p data-aos="fade-up" data-aos-duration="1000">MediSyn & its services.</p>
+      <div class="card-grid">
+      <div class="card" data-aos="fade-up" data-aos-duration="1000">
+          <span class="color1"></span>
+          <div class="img" data-aos="fade-up" data-aos-duration="1100">
+            <img src="https://i.postimg.cc/VNMDM3MT/movie.png">
+          </div>
+          <h4>Improving Hospital Visits
+          </h4>
+          <p>
+            <strong>Nexus</strong> streamlines maternity care with easy appointment booking, smart scheduling, and instant virtual consultations—<br>ensuring timely support for every mother.
+          </p>
+                        <i class="fa fa-angle-right"></i>
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-duration="1300">
+          <span class="color2"></span>
+          <div class="img" data-aos="fade-up" data-aos-duration="1200">
+            <img src="https://i.postimg.cc/6pFM897n/learn.png">
+          </div>
+          <h4>Authentication & inventory
+          </h4>
+          <p>Nexus ensures secure access and real-time inventory management through digital authentication and automated tracking.</p>
+              <i class="fa fa-angle-right"></i>
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-duration="1600">
+          <span class="color3"></span>
+          <div class="img" data-aos="fade-up" data-aos-duration="1300">
+             <img src="https://i.postimg.cc/NFG43FVq/videocall.png">
+          </div>
+          <h4>Centralized  & <br> AI Support</h4>
+          <p>Nexus integrates hospital departments and patient records into a single, unified platform for seamless operations.</p>
+              <i class="fa fa-angle-right"></i>
+      </div>
+      </div>
+  </div>
+</section>
+<!------ end secrion card-corona---->
+
+
+
+
+
+<div class="container marketing" style="display: flex; justify-content: center; padding: 50px 0;">
+  <div class="row" style="display: flex; gap: 20px; justify-content: center;">
+    <div class="col-lg-4" style="border: 1px solid #887e7e; padding: 30px; text-align: center; background-color: #f8f9fa;">
+      <div>
+        <img src="Aarohi.png" alt="Description of image" width="120" height="180" class="bd-placeholder-img rounded-circle">
+      </div>
+      <h2 class="fw-normal">Aarohi</h2>
+      <p><strong>Aarohi</strong> is an advanced machine learning model designed to revolutionize maternal healthcare.</p>
+      <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+    </div>
+    
+    <div class="col-lg-4" style="border: 1px solid #968d8d; padding: 30px; text-align: center; background-color: #f8f9fa;">
+      <div>
+        <img src="nexusimgonly.png" alt="Description of image" width="140" height="140" class="bd-placeholder-img rounded-circle">
+      </div>
+      <h2 class="fw-normal">Nexus</h2>
+      <p>Nexus is a patient-centric portal that provides convenient access to healthcare services.</p>
+      <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+    </div>
+  </div>
+</div>
+>
+    
+      <!-- <div class="col-lg-4" style="border: 1px solid #ccc; padding: 50px;">
+        <div >
+          <img src="onlydox.jpg" alt="Description of image" width="140" height="140" class="bd-placeholder-img rounded-circle">
+        </div>
+        <div >
+          <h2 class="fw-normal">Dox</h2>
+        </div>
+        <div >
+          <p>Dox is a comprehensive data management platform.</p>
+        </div>
+        <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+      </div> /.col-lg-4 -->
+    <!-- </div> -->
+    
+    <link rel="stylesheet" href="baymax.css">
+<section id="hero1">
+    <div class="popup-body about-container1">
+        <div class="img-frame">
+          <img
+            src="https://c4.wallpaperflare.com/wallpaper/848/11/754/baymax-baymax-big-hero-6-minimalism-wallpaper-preview.jpg"
+            alt="baymax" />
+        </div>
+        <div class="hero-content">
+          <h1>Introducing<br> Aarohi </h1>
+          <p>
+            Aarohi is an advanced AI-powered chatbot designed to revolutionize pregnancy tracking. With its ability to monitor and analyze various pregnancy-related symptoms, Aarohi assists expecting mothers in tracking their health, providing personalized advice, and ensuring a safe pregnancy journey. Whether it's offering reminders for prenatal care or helping detect potential issues early, Aarohi is your reliable companion throughout the pregnancy process. Its precision, empathy, and efficiency make it an invaluable tool for both mothers and healthcare providers.
+          </p>
+          
+          <form id="form" action="E:\Downloads\dummy_web\carousel\Login\index.html" autocomplete="off">
+            <button type="submit" class="btn1" aria-label="submit">
+              <span>Try Aarohi Model </span>
+              <ion-icon name="arrow-forward-outline"></ion-icon>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<link rel="stylesheet" href="nexus.css">
+<section id="hero1">
+    <div class="popup-body about-container1">
+        <div class="img-frame">
+          <img
+            src="logonexus.png"
+            alt="baymax" />
+        </div>
+        <div class="hero-content">
+          <h1>Introducing<br> Nexus</h1>
+          <p>
+            Nexus is a patient-centric portal that provides convenient access to healthcare services. It allows patients to book appointments, manage medications, view medical records, and communicate with healthcare providers. Nexus empowers patients to take control of their health journey and improve their overall healthcare experience.
+
+          </p>
+          <form id="form" action="http://localhost:3000" autocomplete="off">
+            <button type="submit" class="btn1" aria-label="submit">
+              <span>Try Nexus </span>
+              <ion-icon name="arrow-forward-outline"></ion-icon>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <hr class="featurette-divider">
+
+  </div><!-- /.container -->
+
+
+  <!-- FOOTER -->
+  <footer class="container">
+    <p class="float-end"><a href="#">Back to top</a></p>
+    <p>&copy; Medisyn Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+  </footer>
+</main>
+<!-- Iframe code -->
+<iframe
+  id="iframeId"
+  src="https://www.stack-ai.com/embed/6d292b14-0ca0-4162-8c35-05cc74429c79/0ae860aa-8fbc-4528-8805-ced91f04c786/67c45231425e6ff43822c380"
+  width="350"
+  height="600"
+  frameborder="0"
+  style="position: fixed; z-index: 1; bottom: 15px; left: 15px;"
+></iframe>
+
+<!-- Script for handling the resizing -->
+<script>
+  function handleMessage(event) {
+    if (event.data.type === 'chatbotStateChange') {
+      const iframe = document.getElementById('iframeId')
+      if (iframe) {
+        if (event.data.isClosed) {
+          iframe.style.width = '60px'
+          iframe.style.height = '60px'
+        } else {
+          iframe.style.width = '600px'
+          iframe.style.height = '600px'
+        }
+      }
+    }
+  }
+
+  // Attach event listener
+  window.addEventListener('message', handleMessage)
+
+  // If you want to clean up the event listener when the page unloads (optional)
+  window.addEventListener('beforeunload', function () {
+    window.removeEventListener('message', handleMessage)
+  })
+</script>
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      
+            AOS.init();
+    </script>
+    
+    </body>
+</html>

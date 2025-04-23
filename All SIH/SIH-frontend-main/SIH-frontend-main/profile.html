@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maternity Profile</title>
+    <link rel="stylesheet" href="profile.css"> <!-- Link to CSS stylesheet -->
+</head>
+<body>
+
+    <!-- Header Section
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="nexus croped.png" alt="MedExpress Logo" height="100px">
+            </div>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="combine.html">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Feedback</a></li>
+                    <li><a href="profile.html" class="active">Maternity Profile</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header> -->
+
+    <!-- Profile Form Section -->
+    <main>
+        <div class="container">
+            <h2>Maternity Tracker</h2>
+            <form id="profile-form">
+                <div class="form-group">
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" required min="0">
+                </div>
+
+                <div class="form-group">
+                    <label for="lmp">Last Menstrual Period (LMP):</label>
+                    <input type="date" id="lmp" name="lmp" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="gestationalAge">Gestational Age (weeks):</label>
+                    <input type="number" id="gestationalAge" name="gestationalAge" required min="0" max="42">
+                </div>
+
+                <div class="form-group">
+                    <label for="dueDate">Estimated Due Date:</label>
+                    <input type="date" id="dueDate" name="dueDate" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="trimester">Trimester:</label>
+                    <select id="trimester" name="trimester" required>
+                        <option value="">Select Trimester</option>
+                        <option value="First">First (0-13 weeks)</option>
+                        <option value="Second">Second (14-26 weeks)</option>
+                        <option value="Third">Third (27-40 weeks)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="prenatalVisits">Number of Prenatal Visits:</label>
+                    <input type="number" id="prenatalVisits" name="prenatalVisits" min="0">
+                </div>
+
+                <div class="form-group">
+                    <label for="pregnancySymptoms">Current Symptoms:</label>
+                    <textarea id="pregnancySymptoms" name="pregnancySymptoms" rows="3" placeholder="e.g., nausea, swelling, fatigue..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="medications">Prescribed Supplements / Medications:</label>
+                    <textarea id="medications" name="medications" rows="3" placeholder="e.g., Folic acid, Iron tablets, etc."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="bp">Blood Pressure (mmHg):</label>
+                    <input type="text" id="bp" name="bp" placeholder="e.g., 120/80">
+                </div>
+
+                <div class="form-group">
+                    <label for="bloodSugar">Blood Sugar Level (mg/dL):</label>
+                    <input type="number" id="bloodSugar" name="bloodSugar">
+                </div>
+
+                <div class="form-group">
+                    <label for="weightGain">Weight Gain (kg):</label>
+                    <input type="number" id="weightGain" name="weightGain" step="0.1">
+                </div>
+
+                <div class="form-group">
+                    <label for="babyMovements">Baby Movements Observed:</label>
+                    <textarea id="babyMovements" name="babyMovements" rows="3" placeholder="Kick counts or movement pattern observed..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="foodCravings">Food Cravings / Aversions:</label>
+                    <textarea id="foodCravings" name="foodCravings" rows="3" placeholder="e.g., craving spicy foods, aversion to dairy..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="complications">Any Complications?</label>
+                    <textarea id="complications" name="complications" rows="3" placeholder="e.g., gestational diabetes, preeclampsia..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="emergencyContact">Emergency Contact:</label>
+                    <input type="text" id="emergencyContact" name="emergencyContact" placeholder="Name and Phone Number">
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <!-- Profile Summary Section -->
+        <div class="container" id="summary-container" style="display: none;">
+            <h2>Maternity Profile Summary</h2>
+            <div id="profile-summary"></div>
+            <button id="download-btn">Download Summary</button>
+            <button id="print-btn">Print Summary</button>
+            <button id="edit-btn">Edit Information</button>
+        </div>
+    </main>
+
+    <!-- Footer Section
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 NEXUS. All rights reserved.</p>
+        </div>
+    </footer>
+
+    JavaScript -->
+    <!-- <script src="profile.js"></script> -->
+
+</body>
+</html>
